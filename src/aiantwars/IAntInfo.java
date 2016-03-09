@@ -15,7 +15,7 @@ public interface IAntInfo
     public ITeamInfo getTeamInfo();
     public EAntType getAntType();
     public ILocationInfo getLocation();
-    public int getDirection();
+    public int getDirection(); //0 = NORTH, 1 = EAST, 2 = SOUTH, 3 = WEST
     public boolean carriesSoil();
     public int getAge();
     public int getHitPoints();

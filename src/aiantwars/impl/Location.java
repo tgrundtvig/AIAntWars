@@ -65,6 +65,7 @@ public class Location implements ILocationInfo
     public void setRock(boolean rock)
     {
         this.rock = rock;
+        setFilled(rock);
     }
 
     public void setFoodCount(int foodCount)

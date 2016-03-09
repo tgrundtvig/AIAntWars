@@ -25,10 +25,11 @@ package aiantwars;
  */
 public enum EAntType
 {
-    QUEEN ("Queen", 2, 1, 4, 10, 50, 5, 5, 5, new int[] {2,2,3,4,5,2,2,5,-1,-1,5,1}),
-    CARRIER ("Carrier", 2, 1, 8, 30, 100, 5, 4, -1, new int[] {2,2,3,4,5,2,2,5,5,5,-1,1}),
-    SCOUT ("Scout", 4, 2, 8, 4, 75, 10, 4, -1, new int[] {2,2,3,4,5,2,2,5,-1,-1,-1,1}),
-    WARRIOR ("Warrier", 2, 8, 16, 4, 200, 5, 8, -1, new int[] {2,2,3,4,5,2,2,5,-1,-1,-1,1});
+    //Name, viewDist, minAttack, maxAttack, maxFoodLoad, maxHitPoints, maxActionPoints, incubationPeriod, layEggCost, actionCosts[]
+    QUEEN ("Queen",     2,  1,  4,  10, 50,     5,  5,  5,  new int[] {2,2,3,4,5,2,2,5,-1,-1,5,1}),
+    CARRIER ("Carrier", 2,  1,  8,  30, 100,    5,  4, -1, new int[] {2,2,3,4,5,2,2,5,5,5,-1,1}),
+    SCOUT ("Scout",     4,  2,  8,  4,  75,     10, 4, -1, new int[] {2,2,3,4,5,2,2,5,-1,-1,-1,1}),
+    WARRIOR ("Warrier", 2,  8,  16, 4,  200,    5,  8, -1, new int[] {2,2,3,4,5,2,2,5,-1,-1,-1,1});
     
     private final String name;
     private final int viewDist;
