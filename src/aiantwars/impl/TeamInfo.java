@@ -32,5 +32,38 @@ public class TeamInfo implements ITeamInfo
     public String getTeamName()
     {
         return name;
-    }    
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 7;
+        hash = 59 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if(this == obj)
+        {
+            return true;
+        }
+        if(obj == null)
+        {
+            return false;
+        }
+        if(!(obj instanceof ITeamInfo))
+        {
+            return false;
+        }
+        final ITeamInfo other = (ITeamInfo) obj;
+        if(this.id != other.getTeamID())
+        {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }
