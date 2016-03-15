@@ -118,7 +118,7 @@ public class Location implements ILocationInfo
         {
             return false;
         }
-        final ILocationInfo other = (Location) obj;
+        final ILocationInfo other = (ILocationInfo) obj;
         if(this.x != other.getX())
         {
             return false;
