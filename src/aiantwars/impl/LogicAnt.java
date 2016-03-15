@@ -132,7 +132,7 @@ public class LogicAnt implements IAntInfo, Comparable<LogicAnt>
         }
         List<EAction> possibleActions = getPossibleActions();
         List<ILocationInfo> visibleLocations = getVisibleLocations();
-        EAction action = ai.chooseAction(this, new ImmutableLocation(location), visibleLocations, possibleActions);
+        EAction action = ai.chooseAction(new ImmutableAntInfo(this), new ImmutableLocation(location), visibleLocations, possibleActions);
         //Test for cheating by returning an action that is not possible
         if (!canPerformAction(action))
         {
@@ -339,7 +339,7 @@ public class LogicAnt implements IAntInfo, Comparable<LogicAnt>
 
     private void onDeath()
     {
-        ai.onDeath(this);
+        ai.onDeath(new ImmutableAntInfo(this));
         isDead = true;
         //Play death-animation
         if (graphicsAnt != null)
@@ -409,7 +409,7 @@ public class LogicAnt implements IAntInfo, Comparable<LogicAnt>
             else
             {
                 actionPoints = type.getMaxActionPoints();
-                ai.onStartTurn(this, turn + 1);
+                ai.onStartTurn(new ImmutableAntInfo(this), turn + 1);
             }
         }
         else if (age == 0)
@@ -421,8 +421,8 @@ public class LogicAnt implements IAntInfo, Comparable<LogicAnt>
                 graphicsAnt.playHatchAnimation();
             }
             actionPoints = type.getMaxActionPoints();
-            ai.onHatch(this, new ImmutableLocation(location), board.getSizeX(), board.getSizeY());
-            ai.onStartTurn(this, turn + 1);
+            ai.onHatch(new ImmutableAntInfo(this), new ImmutableLocation(location), board.getSizeX(), board.getSizeY());
+            ai.onStartTurn(new ImmutableAntInfo(this), turn + 1);
         }
     }
 
@@ -452,7 +452,7 @@ public class LogicAnt implements IAntInfo, Comparable<LogicAnt>
         {
             graphicsAnt.playOnDamage(damage);
         }
-        ai.onAttacked(this, attackDir, new ImmutableAntInfo(attacker), damage);
+        ai.onAttacked(new ImmutableAntInfo(this), attackDir, new ImmutableAntInfo(attacker), damage);
         hitPoints -= damage;
         if(hitPoints <= 0)
         {
@@ -506,7 +506,7 @@ public class LogicAnt implements IAntInfo, Comparable<LogicAnt>
     {
         foodLoad -= type.getLayEggCost();
         AntEgg egg = new AntEgg();
-        ai.onLayEgg(this, factory.getEggTypes(), egg);
+        ai.onLayEgg(new ImmutableAntInfo(this), factory.getEggTypes(), egg);
 
         EAntType newAntType = egg.getType();
         IAntAI newAntAI = egg.getAi();
