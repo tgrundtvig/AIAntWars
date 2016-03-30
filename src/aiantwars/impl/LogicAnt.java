@@ -336,6 +336,11 @@ public class LogicAnt implements IAntInfo, Comparable<LogicAnt>
                 && !inFront.isFilled()
                 && inFront.getAnt() == null);
     }
+    
+    public void kill()
+    {
+        onDeath();
+    }
 
     private void onDeath()
     {

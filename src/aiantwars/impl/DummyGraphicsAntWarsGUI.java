@@ -15,11 +15,17 @@ import aiantwars.graphicsinterface.IGraphicsAntWarsGUI;
  */
 public class DummyGraphicsAntWarsGUI implements IGraphicsAntWarsGUI
 {
+    private final boolean verbose;
 
+    public DummyGraphicsAntWarsGUI(boolean verbose)
+    {
+        this.verbose = verbose;
+    }
+    
     @Override
     public IGraphicsAnt createNewGraphicsAnt(IAntInfo antInfo)
     {
-        return new DummyGraphicsAnt(antInfo.antID());
+        return new DummyGraphicsAnt(antInfo.antID(), verbose);
     }
 
     @Override

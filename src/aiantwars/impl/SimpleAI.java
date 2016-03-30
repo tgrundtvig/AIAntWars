@@ -56,41 +56,41 @@ public class SimpleAI implements IAntAI
             actions.append(a.toString());
             actions.append(", ");
         }
-        System.out.println(actions.toString());
-        System.out.println("ID: " + thisAnt.antID() + " chooseAction: " + action);
+        //System.out.println(actions.toString());
+        //System.out.println("ID: " + thisAnt.antID() + " chooseAction: " + action);
         return action;
     }
 
     @Override
     public void onStartTurn(IAntInfo thisAnt, int turn)
     {
-        System.out.println("ID: " + thisAnt.antID() + " onStartTurn(" + turn + ")");
+        //System.out.println("ID: " + thisAnt.antID() + " onStartTurn(" + turn + ")");
     }
 
     @Override
     public void onAttacked(IAntInfo thisAnt, int dir, IAntInfo attacker, int damage)
     {
-        System.out.println("ID: " + thisAnt.antID() + " onAttacked: " + damage + " damage");
+        //System.out.println("ID: " + thisAnt.antID() + " onAttacked: " + damage + " damage");
     }
 
     @Override
     public void onDeath(IAntInfo thisAnt)
     {
-        System.out.println("ID: " + thisAnt.antID() + " onDeath");
+        //System.out.println("ID: " + thisAnt.antID() + " onDeath");
     }
 
     @Override
     public void onLayEgg(IAntInfo thisAnt, List<EAntType> types, IEgg egg)
     {
         EAntType type = types.get(rnd.nextInt(types.size())); 
-        System.out.println("ID: " + thisAnt.antID() + " onLayEgg: " + type);
+        //System.out.println("ID: " + thisAnt.antID() + " onLayEgg: " + type);
         egg.set(type, this);
     }
 
     @Override
     public void onHatch(IAntInfo thisAnt, ILocationInfo thisLocation, int worldSizeX, int worldSizeY)
     {
-        System.out.println("ID: " + thisAnt.antID() + " onHatch");
+        //System.out.println("ID: " + thisAnt.antID() + " onHatch");
     }
     
 }
