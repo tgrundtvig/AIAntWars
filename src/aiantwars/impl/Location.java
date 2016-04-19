@@ -102,6 +102,13 @@ public class Location implements ILocationInfo
         hash = 41 * hash + this.y;
         return hash;
     }
+    
+    public void copyFrom(Location loc)
+    {
+        this.filled = loc.filled;
+        this.rock = loc.rock;
+        this.foodCount = loc.foodCount;
+    }
 
     @Override
     public boolean equals(Object obj)
