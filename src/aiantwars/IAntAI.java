@@ -13,6 +13,8 @@ import java.util.List;
  */
 public interface IAntAI
 {
+    public void onStartMatch(int worldSizeX, int worldSizeY);
+    public void onStartRound(int round);
     public void onHatch(IAntInfo thisAnt, ILocationInfo thisLocation, int worldSizeX, int worldSizeY);
     public void onStartTurn(IAntInfo thisAnt, int turn);
     public EAction chooseAction(IAntInfo thisAnt,
@@ -24,4 +26,6 @@ public interface IAntAI
     
     public void onAttacked(IAntInfo thisAnt, int dir, IAntInfo attacker, int damage);
     public void onDeath(IAntInfo thisAnt);
+    public void onEndRound(int yourMajor, int yourMinor, int enemyMajor, int enemyMinor);
+    public void onEndMatch(int yourScore, int yourWins, int enemyScore, int enemyWins);
 }

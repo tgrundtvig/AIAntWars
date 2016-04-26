@@ -92,5 +92,29 @@ public class SimpleAI implements IAntAI
     {
         //System.out.println("ID: " + thisAnt.antID() + " onHatch");
     }
+
+    @Override
+    public void onStartMatch(int worldSizeX, int worldSizeY)
+    {
+        
+    }
+
+    @Override
+    public void onStartRound(int round)
+    {
+        
+    }
+
+    @Override
+    public void onEndRound(int yourMajor, int yourMinor, int enemyMajor, int enemyMinor)
+    {
+       
+    }
+
+    @Override
+    public void onEndMatch(int yourScore, int yourWins, int enemyScore, int enemyWins)
+    {
+        
+    }
     
 }

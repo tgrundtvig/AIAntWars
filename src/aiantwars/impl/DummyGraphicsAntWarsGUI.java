@@ -31,7 +31,10 @@ public class DummyGraphicsAntWarsGUI implements IGraphicsAntWarsGUI
     @Override
     public void onStartTurn(int turn)
     {
-        System.out.println("\n\nTurn " + turn + "\n*********");
+        if(verbose)
+        {
+            System.out.println("\n\nTurn " + turn + "\n*********");
+        }
     }
     
 }
